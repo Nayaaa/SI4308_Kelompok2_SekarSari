@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ObatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/de', function () {
+    return view('detailobat');
 });
+
+Route::get('/', [ObatController::class, 'index'])->name('obat');
+
+Route::get('/detailobat/{id}', [ObatController::class, 'detail'])->name('detail');

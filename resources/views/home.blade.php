@@ -86,31 +86,16 @@
           <div class="col-md-12 block-3 products-wrap">
             <div class="nonloop-block-3 owl-carousel">
 
+            @foreach($obat as $obt=> $ob)
+
               <div class="text-center item mb-4 item-v2">
                 <span class="onsale">Sale</span>
                 <a href="#"> <img src="template/images/product_03.png" alt="Image"></a>
-                <h3 class="text-dark"><a href="template/shop-single.html">Umcka Cold Care</a></h3>
-                <p class="price">Rp 120.000</p>
+                <h3 class="text-dark"><a href="{{route('detail', ['id' => $ob->id])}}">{{$ob->NamaObat}}</a></h3>
+                <p class="price">{{$ob->Harga}}</p>
               </div>
 
-              <div class="text-center item mb-4 item-v2">
-                <a href="#"> <img src="template/images/product_01.png" alt="Image"></a>
-                <h3 class="text-dark"><a href="template/shop-single.html">Bioderma</a></h3>
-                <p class="price">Rp 120.000</p>
-              </div>
-
-              <div class="text-center item mb-4 item-v2">
-                <span class="onsale">Sale</span>
-                <a href="#"> <img src="template/images/product_02.png" alt="Image"></a>
-                <h3 class="text-dark"><a href="template/shop-single.html">Chanca Pledra</a></h3>
-                <p class="price">Rp 120.000</p>
-              </div>
-
-              <div class="text-center item mb-4 item-v2">
-                <a href="#"> <img src="template/images/product_04.png" alt="Image"></a>
-                <h3 class="text-dark"><a href="template/shop-single.html">CetylPure</a></h3>
-                <p class="price">Rp 120.000</p>
-              </div>
+            @endforeach
 
             </div>
           </div>
