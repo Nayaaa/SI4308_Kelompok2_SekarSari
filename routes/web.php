@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/de', function () {
-    return view('detailobat');
+Route::get('/kat', function () {
+    return view('katalog');
 });
 
 Route::get('/', [ObatController::class, 'index'])->name('obat');
+
+Route::get('/katalog', [ObatController::class, 'katalog'])->name('katalog');
 
 Route::get('/detailobat/{id}', [ObatController::class, 'detail'])->name('detail');

@@ -19,4 +19,11 @@ class ObatController extends Controller
 
         return view('detailobat', compact('obat'));
     }
+
+    public function katalog()
+    {
+        $obat = Obat::all();
+        return view('katalog', compact('obat'));
+    }
 }
+

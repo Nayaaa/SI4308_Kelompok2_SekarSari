@@ -50,7 +50,7 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li class="active"><a href="{{url ('/')}}">Home</a></li>
-                <li><a href="#">Obat</a></li>
+                <li><a href="{{url ('/katalog')}}">Obat</a></li>
                 <li class="has-children">
                   <a href="#">Kategori</a>
                   <ul class="dropdown">
