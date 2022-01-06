@@ -13,7 +13,7 @@ class Tabelkeranjang extends Migration
      */
     public function up()
     {
-        Schema::create('keranjang', function (Blueprint $table) {
+        Schema::create('keranjangs', function (Blueprint $table) {
             $table->id();
             $table->morphs('pelanggan');
             $table->morphs('obat');

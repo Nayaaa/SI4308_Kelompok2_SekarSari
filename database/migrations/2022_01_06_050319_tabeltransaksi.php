@@ -13,7 +13,7 @@ class Tabeltransaksi extends Migration
      */
     public function up()
     {
-        Schema::create('transaksi', function (Blueprint $table) {
+        Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->morphs('pelanggan');
             $table->morphs('obat');

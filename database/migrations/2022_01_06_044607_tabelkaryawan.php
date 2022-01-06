@@ -13,7 +13,7 @@ class Tabelkaryawan extends Migration
      */
     public function up()
     {
-        Schema::create('karyawan', function (Blueprint $table) {
+        Schema::create('karyawans', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->string('nohp');

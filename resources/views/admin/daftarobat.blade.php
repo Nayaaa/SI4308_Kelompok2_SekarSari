@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row mb-5">
           <form class="col-md-12" method="post">
-            <a type="button" class="btn btn-primary mb-3" href="{{url ('/tambahobat')}}">Tambah Obat</a>
+            <a type="button" class="btn btn-primary mb-3" href="{{url ('/admin/tambahobat')}}">Tambah Obat</a>
             <div class="site-blocks-table">
               <table class="table table-bordered">
                 <thead>

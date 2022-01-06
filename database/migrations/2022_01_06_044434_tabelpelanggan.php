@@ -13,7 +13,7 @@ class Tabelpelanggan extends Migration
      */
     public function up()
     {
-        Schema::create('pelanggan', function (Blueprint $table) {
+        Schema::create('pelanggans', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->string('email')->unique();
