@@ -1,4 +1,4 @@
-@extends('template')
+@extends('pelanggan.template')
 @section('isi')
 <div class="owl-carousel owl-single px-0">
       <div class="site-blocks-cover overlay" style="background-image: url('/template/images/hero_bg.jpg');">

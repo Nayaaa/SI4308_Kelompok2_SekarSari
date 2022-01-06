@@ -43,34 +43,14 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="{{url ('/')}}" class="js-logo-clone"><strong class="text-primary">Sekar</strong>sari</a>
+              <a href="{{url ('/admin')}}" class="js-logo-clone"><strong class="text-primary">Sekar</strong>sari</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li class="active"><a href="{{url ('/')}}">Home</a></li>
-                <li><a href="{{url ('/katalog')}}">Obat</a></li>
-                <li class="has-children">
-                  <a href="#">Kategori</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Supplements</a></li>
-                    <li class="has-children">
-                      <a href="#">Vitamins</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Supplements</a></li>
-                        <li><a href="#">Vitamins</a></li>
-                        <li><a href="#">Diet &amp; Nutrition</a></li>
-                        <li><a href="#">Tea &amp; Coffee</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Diet &amp; Nutrition</a></li>
-                    <li><a href="#">Tea &amp; Coffee</a></li>
-                    
-                  </ul>
-                </li>
+                <li class="active"><a href="{{url ('/admin')}}">Obat</a></li>
                 <li><a href="#">Layanan Kesehatan</a></li>
-                <li><a href="#">Tentang</a></li>
               </ul>
             </nav>
           </div>
@@ -103,10 +83,8 @@
           <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
             <h3 class="footer-heading mb-4">Navigation</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
               <li><a href="#">Obat</a></li>
               <li><a href="#">Layanan Kesehatan</a></li>
-              <li><a href="#">Tentang</a></li>
             </ul>
           </div>
 

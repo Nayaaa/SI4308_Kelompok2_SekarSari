@@ -1,10 +1,10 @@
-@extends('template')
+@extends('pelanggan.template')
 @section('isi')
 
 <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="{{url ('/')}}">Home</a> <span class="mx-2 mb-0">/</span><strong class="text-black">{{$obat->NamaObat}}</strong></div>
+          <div class="col-md-12 mb-0"><a href="{{url ('/home')}}">Home</a> <span class="mx-2 mb-0">/</span><strong class="text-black">{{$obat->NamaObat}}</strong></div>
         </div>
       </div>
     </div>
@@ -14,18 +14,13 @@
         <div class="row">
           <div class="col-md-5 mr-auto">
             <div class="border text-center">
-              <img src="template/images/product_07_large.png" alt="Image" class="img-fluid p-5">
+              <img src="{{ asset('template/images/'.$obat->Foto) }}" alt="Image" class="img-fluid p-5">
             </div>
           </div>
           <div class="col-md-6">
             <h2 class="text-black">{{$obat->NamaObat}}</h2>
             <p>{{$obat->Deskripsi}}</p>
-            
-
-            <p><strong class="text-primary h4">Rp. {{$obat->Harga}}</strong></p>
-
-            
-            
+            <p><strong class="text-primary h4">Rp. {{$obat->Harga}}</strong></p>            
             <div class="mb-5">
               <div class="input-group mb-3" style="max-width: 220px;">
                 <div class="input-group-prepend">
@@ -39,9 +34,10 @@
               </div>
     
             </div>
-            <p><a href="cart.html" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Masukkan Keranjang</a></p>
-
-            <div class="mt-5">
+            <p><a href="cart.html" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Masukkan Keranjang</a></p>    
+          </div>
+          <div class="container">
+          <div class="mt-5">
               <ul class="nav nav-pills mb-3 custom-pill" id="pills-tab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
@@ -106,8 +102,6 @@
                 </div>            
               </div>
             </div>
-
-    
           </div>
         </div>
       </div>
