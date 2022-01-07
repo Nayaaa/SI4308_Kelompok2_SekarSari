@@ -34,7 +34,20 @@
                     <td>{{$d->email}}</td>
                     <td>{{$d->alamat}}</td>
                     <td>{{$d->spesialis}}</td>
-                    <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
+                    <td>
+                         <form action="" method="POST">
+                            <a href="{{route('editdokter', ['id' => $d->id])}}">
+                                <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
+                            </a>
+                        </form>
+                        <form action="{{route('deletedokter')}}" method="POST">
+                            @csrf
+                            <input type="hidden" value="{{$d->id}}" name="id">
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>

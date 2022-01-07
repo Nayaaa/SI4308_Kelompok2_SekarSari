@@ -90,7 +90,7 @@
 
               <div class="text-center item mb-4 item-v2">
                 <span class="onsale">Sale</span>
-                <a href="#"> <img src="template/images/product_03.png" alt="Image"></a>
+                <a href="{{route('detail', ['id' => $ob->id])}}"> <img src="{{ asset('template/images/'.$ob->Foto) }}" alt="Image"></a>
                 <h3 class="text-dark"><a href="{{route('detail', ['id' => $ob->id])}}">{{$ob->NamaObat}}</a></h3>
                 <p class="price">{{$ob->Harga}}</p>
               </div>

@@ -4,7 +4,7 @@
 <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="{{url ('/home')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+          <div class="col-md-12 mb-0"><a href="{{url ('/home')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Obat</strong></div>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
         @foreach($obat as $obt=> $ob)
           <div class="col-sm-6 col-lg-4 text-center item mb-4 item-v2">
             <span class="onsale">Sale</span>
-            <a href="{{route('detail', ['id' => $ob->id])}}"> <img src="template/images/product_01.png" alt="Image"></a>
+            <a href="{{route('detail', ['id' => $ob->id])}}"> <img src="{{ asset('template/images/'.$ob->Foto) }}" alt="Image"></a>
             <h3 class="text-dark"><a href="{{route('detail', ['id' => $ob->id])}}">{{$ob->NamaObat}}</a></h3>
             <p class="price">{{$ob->Harga}}</p>
           </div>    

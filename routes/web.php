@@ -29,6 +29,10 @@ Route::get('/admin/tambahobat', function () {
     return view('admin.tambahobat');
 });
 
+Route::get('/admin/tambahdokter', function () {
+    return view('admin.tambahdokter');
+});
+
 
 Route::get('/admin', [ObatController::class, 'admin'])->name('daftarobat');
 
@@ -46,9 +50,15 @@ Route::post('/admin/deleteobat', [ObatController::class, 'deleteobat'])->name('d
 
 Route::get('/admin/editobat/{id}', [ObatController::class, 'editobat'])->name('editobat');
 
+Route::post('/admin/deletedokter', [DokterController::class, 'deletedokter'])->name('deletedokter');
+
+Route::get('/admin/editdokter/{id}', [DokterController::class, 'editdokter'])->name('editdokter');
+
+Route::post('/admin/editdokter/{id}', [DokterController::class, 'updatedokter'])->name('updatedokter');
+
 Route::post('/admin/editobat/{id}', [ObatController::class, 'updateobat'])->name('updateobat');
 
-Route::post('/admin/tambahdokter', [DokterController::class, 'tambahdokter'])->name('tambahdokter');
+Route::post('/admin/simpandokter', [DokterController::class, 'tambahdokter'])->name('simpandokter');
 
 Route::post('/daftarpelanggan', [pelangganController::class, 'daftar'])->name('daftarpelanggan');
 
