@@ -1,11 +1,17 @@
 @extends('admin.template')
 @section('isi')
-
+<div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="{{url ('/admin')}}">Daftar Obat</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Tambah Obat</strong></div>
+        </div>
+      </div>
+</div>
 <div class="site-section">
       <div class="container">
           
       <h2 class="h3 mb-3 text-black">Tambah Obat</h2>   
-        <form action="{{route('simpanobat')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('simpanobat')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
           <div class="col-md-6 mb-5 mb-md-0">

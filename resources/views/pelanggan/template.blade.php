@@ -103,8 +103,8 @@
           <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
             <h3 class="footer-heading mb-4">Navigation</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Obat</a></li>
+              <li><a href="{{url('/home')}}">Home</a></li>
+              <li><a href="{{url('/katalog')}}">Obat</a></li>
               <li><a href="#">Layanan Kesehatan</a></li>
               <li><a href="#">Tentang</a></li>
             </ul>

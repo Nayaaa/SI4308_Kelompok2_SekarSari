@@ -7,19 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="template/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="{{ asset('template/fonts/icomoon/style.css')}}">
 
-  <link rel="stylesheet" href="template/css/bootstrap.min.css">
-  <link rel="stylesheet" href="template/fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="template/css/magnific-popup.css">
-  <link rel="stylesheet" href="template/css/jquery-ui.css">
-  <link rel="stylesheet" href="template/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="template/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="{{ asset('template/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/fonts/flaticon/font/flaticon.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/css/magnific-popup.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/css/jquery-ui.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/css/owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('template/css/owl.theme.default.min.css')}}">
 
 
-  <link rel="stylesheet" href="template/css/aos.css">
+  <link rel="stylesheet" href="{{ asset('template/css/aos.css')}}">
 
-  <link rel="stylesheet" href="template/css/style.css">
+  <link rel="stylesheet" href="{{ asset('template/css/style.css')}}">
 
 </head>
 
@@ -50,7 +50,7 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li class="active"><a href="{{url ('/admin')}}">Obat</a></li>
-                <li><a href="#">Layanan Kesehatan</a></li>
+                <li><a href="{{url ('/admin/dokter')}}">Layanan Kesehatan</a></li>
               </ul>
             </nav>
           </div>
@@ -83,8 +83,8 @@
           <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
             <h3 class="footer-heading mb-4">Navigation</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Obat</a></li>
-              <li><a href="#">Layanan Kesehatan</a></li>
+              <li><a href="{{url ('/admin')}}">Obat</a></li>
+              <li><a href="{{url ('/admin/dokter')}}">Layanan Kesehatan</a></li>
             </ul>
           </div>
 

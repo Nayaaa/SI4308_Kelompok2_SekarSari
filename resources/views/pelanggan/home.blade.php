@@ -14,7 +14,7 @@
                   </div>
                 </div>
                 
-                <p><a href="#" class="btn btn-primary px-5 py-3">Shop Now</a></p>
+                <p><a href="{{url('/katalog')}}" class="btn btn-primary px-5 py-3">Shop Now</a></p>
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@
                     <p>Kami menyediakan berbagai macam obat-obatan terpercaya dan aman serta dibawah pengawasan apoteker terpercaya.</p>
                   </div>
                 </div>
-                <p><a href="#" class="btn btn-primary px-5 py-3">Shop Now</a></p>
+                <p><a href="{{url('/katalog')}}" class="btn btn-primary px-5 py-3">Shop Now</a></p>
               </div>
             </div>
           </div>

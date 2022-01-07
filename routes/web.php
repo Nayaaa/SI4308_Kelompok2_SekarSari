@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DokterController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\pelangganController;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +24,14 @@ Route::get('/daftar', function () {
     return view('pelanggan.daftar');
 });
 
+Route::get('/admin/tambahobat', function () {
+    return view('admin.tambahobat');
+});
 
-Route::get('/admin', [ObatController::class, 'admin'])->name('obat');
+
+Route::get('/admin', [ObatController::class, 'admin'])->name('daftarobat');
+
+Route::get('/admin/dokter', [DokterController::class, 'index'])->name('dokter');
 
 Route::get('/home', [ObatController::class, 'index'])->name('obat');
 
@@ -32,6 +39,8 @@ Route::get('/katalog', [ObatController::class, 'katalog'])->name('katalog');
 
 Route::get('/detailobat/{id}', [ObatController::class, 'detail'])->name('detail');
 
-Route::post('/admin/tambahobat', [ObatController::class, 'tambahobat'])->name('simpanobat');
+Route::post('/admin/simpanobat', [ObatController::class, 'tambahobat'])->name('simpanobat');
+
+Route::post('/admin/tambahdokter', [DokterController::class, 'tambahdokter'])->name('tambahdokter');
 
 Route::post('/daftarpelanggan', [pelangganController::class, 'daftar'])->name('daftarpelanggan');

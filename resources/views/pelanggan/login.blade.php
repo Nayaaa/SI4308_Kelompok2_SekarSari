@@ -36,7 +36,7 @@
               <br>
               <p class="mb-4">Sign In untuk masuk ke Apotek Sekar Sari Online</p>
             </div>
-            <form action="{{route('actionlogin')}}" method="post">
+            <form action="" method="post">
               @csrf
               <div class="form-group first">
                 <label for="email">Email</label>

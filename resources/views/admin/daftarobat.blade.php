@@ -1,6 +1,12 @@
 @extends('admin.template')
 @section('isi')
-
+<div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><strong class="text-black">Daftar Obat</strong><span class="mx-2 mb-0">/ . . .</span></div>
+        </div>
+      </div>
+    </div>
 <div class="site-section">
       <div class="container">
         <div class="row mb-5">
@@ -22,7 +28,7 @@
                 @foreach($obat as $obt=> $ob)
                   <tr>
                     <td class="product-thumbnail">
-                      <img src="template/images/product_02.png" alt="Image" class="img-fluid">
+                      <img src="{{ asset('template/images/'.$ob->Foto) }}" alt="Image" class="img-fluid">
                     </td>
                     <td class="product-name">
                       <h2 class="h5 text-black">{{$ob->NamaObat}}</h2>

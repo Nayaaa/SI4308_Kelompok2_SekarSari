@@ -62,7 +62,7 @@ class ObatController extends Controller
         $obat->NoRegis = $request->NoRegis;
         $obat->save();        
 
-        return redirect()->route('admin');
+        return redirect()->route('daftarobat');
 
     }
 }
