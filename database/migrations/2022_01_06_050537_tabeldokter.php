@@ -20,6 +20,7 @@ class Tabeldokter extends Migration
             $table->string('email')->unique();
             $table->text('alamat');
             $table->string('spesialis');
+            $table->text('foto');
             $table->timestamps();
         });
     }

@@ -13,10 +13,23 @@ class DokterController extends Controller
         return view('admin.daftarlayanan', compact('dokter'));
     }
 
+    public function layanan()
+    {
+        $dokter = Dokter::all();
+        return view('pelanggan.layanan', compact('dokter'));
+    }
+
     public function tambahdokter(Request $request)
     {
         $dokter = new Dokter();
 
+        if ($files = $request->file('foto')) {
+            $destinationPath = public_path("/template/images/"); // upload path
+            $fileName = date('YmdHis') . "." . $files->getClientOriginalName();
+            $files->move($destinationPath, $fileName);
+            $dokter->foto = $fileName;
+
+        }
         $dokter->nama = $request->nama;
         $dokter->nohp = $request->nohp;
         $dokter->email = $request->email;
@@ -48,6 +61,13 @@ class DokterController extends Controller
     {
         $dokter = Dokter::find($id);
 
+        if ($files = $request->file('foto')) {
+            $destinationPath = public_path("/template/images/"); // upload path
+            $fileName = date('YmdHis') . "." . $files->getClientOriginalName();
+            $files->move($destinationPath, $fileName);
+            $dokter->foto = $fileName;
+
+        }
         $dokter->nama = $request->nama;
         $dokter->nohp = $request->nohp;
         $dokter->email = $request->email;

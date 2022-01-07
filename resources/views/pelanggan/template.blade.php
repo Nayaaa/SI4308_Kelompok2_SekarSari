@@ -54,23 +54,17 @@
                 <li class="has-children">
                   <a href="#">Kategori</a>
                   <ul class="dropdown">
-                    <li><a href="#">Supplements</a></li>
-                    <li class="has-children">
-                      <a href="#">Vitamins</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Supplements</a></li>
-                        <li><a href="#">Vitamins</a></li>
-                        <li><a href="#">Diet &amp; Nutrition</a></li>
-                        <li><a href="#">Tea &amp; Coffee</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Diet &amp; Nutrition</a></li>
-                    <li><a href="#">Tea &amp; Coffee</a></li>
-                    
+                        <li><a href="{{url('/katalogobatkulitluar')}}">Obat Kulit Luar</a></li>
+                        <li><a href="{{url('/katalogobatperedanyeri')}}">Pereda Nyeri</a></li>
+                        <li><a href="{{url('/katalogobatantiseptik')}}">Antiseptik</a></li>
+                        <li><a href="{{url('/katalogobatantiinflamasi')}}">Anti Inflamasi</a></li>
+                        <li><a href="{{url('/katalogobatmata')}}">Mata</a></li>
+                        <li><a href="{{url('/katalogobatalergi')}}">Alergi</a></li>
+                        <li><a href="{{url('/katalogobatmulutdantenggorokan')}}">Mulut & Tenggorokan</a></li>
+                        <li><a href="{{url('/katalogobatpencernaan')}}">Pencernaan</a></li>
+                        <li><a href="{{url('/katalogobatvitamindansuplemen')}}">Vitamin dan Suplemen</a></li>
                   </ul>
-                </li>
-                <li><a href="#">Layanan Kesehatan</a></li>
-                <li><a href="#">Tentang</a></li>
+                <li><a href="{{url('/pelanggan/layanan')}}">Layanan Kesehatan</a></li>
               </ul>
             </nav>
           </div>
@@ -140,15 +134,15 @@
     </footer>
   </div>
 
-  <script src="template/js/jquery-3.3.1.min.js"></script>
-  <script src="template/js/jquery-ui.js"></script>
-  <script src="template/js/popper.min.js"></script>
-  <script src="template/js/bootstrap.min.js"></script>
-  <script src="template/js/owl.carousel.min.js"></script>
-  <script src="template/js/jquery.magnific-popup.min.js"></script>
-  <script src="template/js/aos.js"></script>
+  <script src="{{ asset('template/js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{ asset('template/js/jquery-ui.js')}}"></script>
+  <script src="{{ asset('template/js/popper.min.js')}}"></script>
+  <script src="{{ asset('template/js/bootstrap.min.js')}}"></script>
+  <script src="{{ asset('template/js/owl.carousel.min.js')}}"></script>
+  <script src="{{ asset('template/js/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{ asset('template/js/aos.js')}}"></script>
 
-  <script src="template/js/main.js"></script>
+  <script src="{{ asset('template/js/main.js')}}"></script>
 
 </body>
 

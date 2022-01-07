@@ -40,7 +40,27 @@ Route::get('/admin/dokter', [DokterController::class, 'index'])->name('dokter');
 
 Route::get('/home', [ObatController::class, 'index'])->name('obat');
 
+Route::get('/pelanggan/layanan', [DokterController::class, 'layanan'])->name('layanan');
+
 Route::get('/katalog', [ObatController::class, 'katalog'])->name('katalog');
+
+Route::get('/katalogobatmata', [ObatController::class, 'katalogmata'])->name('katalogmata');
+
+Route::get('/katalogobatkulitluar', [ObatController::class, 'katalogobatkulitluar'])->name('katalogobatkulitluar');
+
+Route::get('/katalogobatperedanyeri', [ObatController::class, 'katalogobatperedanyeri'])->name('katalogobatperedanyeri');
+
+Route::get('/katalogobatantiseptik', [ObatController::class, 'katalogobatantiseptik'])->name('katalogobatantiseptik');
+
+Route::get('/katalogobatantiinflamasi', [ObatController::class, 'katalogobatantiinflamasi'])->name('katalogobatantiinflamasi');
+
+Route::get('/katalogobatalergi', [ObatController::class, 'katalogobatalergi'])->name('katalogobatalergi');
+
+Route::get('/katalogobatmulutdantenggorokan', [ObatController::class, 'katalogobatmulutdantenggorokan'])->name('katalogobatmulutdantenggorokan');
+
+Route::get('/katalogobatpencernaan', [ObatController::class, 'katalogobatpencernaan'])->name('katalogobatpencernaan');
+
+Route::get('/katalogobatvitamindansuplemen', [ObatController::class, 'katalogobatvitamindansuplemen'])->name('katalogobatvitamindansuplemen');
 
 Route::get('/detailobat/{id}', [ObatController::class, 'detail'])->name('detail');
 

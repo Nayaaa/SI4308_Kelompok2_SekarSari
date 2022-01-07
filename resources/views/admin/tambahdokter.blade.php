@@ -47,6 +47,13 @@
                   <option value="Terapi Wicara">Terapi Wicara</option>
                 </select>
               </div>
+
+            <div class="form-group">
+              <div class="mb-3">
+                  <label for="foto" class="text-black">Foto Dokter<span class="text-danger">*</span></label>
+                  <input class="form-control" type="file" id="foto" name="foto">
+              </div>
+            </div>
             <button type="submit" class="btn btn-primary col-12 mt-5" >Simpan</button> 
             </div>
           </div>

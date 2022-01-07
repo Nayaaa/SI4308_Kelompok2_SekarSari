@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Obat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ObatController extends Controller
 {
@@ -30,6 +31,56 @@ class ObatController extends Controller
     {
         $obat = Obat::all();
         return view('pelanggan.katalog', compact('obat'));
+    }
+
+    public function katalogmata()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Mata')->get();
+        return view('pelanggan.katalogmata', compact('obat'));
+    }
+
+    public function katalogobatkulitluar()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Obat Kulit Luar')->get();
+        return view('pelanggan.katalogobatkulitluar', compact('obat'));
+    }
+
+    public function katalogobatperedanyeri()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Pereda Nyeri')->get();
+        return view('pelanggan.katalogobatperedanyeri', compact('obat'));
+    }
+
+    public function katalogobatantiseptik()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Antiseptik')->get();
+        return view('pelanggan.katalogobatantiseptik', compact('obat'));
+    }
+
+    public function katalogobatantiinflamasi()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Anti Inflamasi')->get();
+        return view('pelanggan.katalogobatantiinflamasi', compact('obat'));
+    }
+    public function katalogobatalergi()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Alergi')->get();
+        return view('pelanggan.katalogobatalergi', compact('obat'));
+    }
+    public function katalogobatmulutdantenggorokan()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Mulut & Tenggorokan')->get();
+        return view('pelanggan.katalogobatmulutdantenggorokan', compact('obat'));
+    }
+    public function katalogobatpencernaan()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Pencernaan')->get();
+        return view('pelanggan.katalogobatpencernaan', compact('obat'));
+    }
+    public function katalogobatvitamindansuplemen()
+    {
+        $obat = DB::table('obats')->where('Kategori', 'Vitamin dan Suplemen')->get();
+        return view('pelanggan.katalogobatvitamindansuplemen', compact('obat'));
     }
 
     public function tambahobat(Request $request)
