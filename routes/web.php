@@ -3,6 +3,7 @@
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\pelangganController;
+use App\Models\Obat;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,14 @@ Route::get('/detailobat/{id}', [ObatController::class, 'detail'])->name('detail'
 
 Route::post('/admin/simpanobat', [ObatController::class, 'tambahobat'])->name('simpanobat');
 
+Route::post('/admin/deleteobat', [ObatController::class, 'deleteobat'])->name('deleteobat');
+
+Route::get('/admin/editobat/{id}', [ObatController::class, 'editobat'])->name('editobat');
+
+Route::post('/admin/editobat/{id}', [ObatController::class, 'updateobat'])->name('updateobat');
+
 Route::post('/admin/tambahdokter', [DokterController::class, 'tambahdokter'])->name('tambahdokter');
 
 Route::post('/daftarpelanggan', [pelangganController::class, 'daftar'])->name('daftarpelanggan');
+
+

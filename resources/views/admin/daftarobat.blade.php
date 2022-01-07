@@ -36,7 +36,19 @@
                     <td>{{$ob->Harga}}</td>
                     <td>{{$ob->Stok}}</td>
                     <td>{{$ob->Kemasan}}</td>
-                    <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
+                    <td>
+                         <form action="" method="POST">
+                            <a href="{{route('editobat', ['id' => $ob->id])}}">
+                                <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
+                            </a>
+                        </form>
+                        <form action="{{route('deleteobat')}}" method="POST">
+                            @csrf
+                            <input type="hidden" value="{{$ob->id}}" name="id">
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete">
+                                Delete
+                            </button>
+                        </form>
                   </tr>
                   @endforeach
                 </tbody>
