@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Keranjang;
+use App\Models\Obat;
 use App\Models\pelanggan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -32,11 +34,35 @@ class pelangganController extends Controller
         $user = DB::table('pelanggans')->where(['email' => $email, 'password' => $pwd])->get();
         if ($user->isNotEmpty()) {
             $login = true;
-            return redirect()->route('obat');
+            $obat = Obat::all();
+            return view('pelanggan.home', compact('obat', 'user'));
         }else{
             $login = false;
             Session::flash('error', 'Email atau Password Salah');
             return view('pelanggan.login');
         }
+    }
+
+    public function tambahkeranjang(Request $request, $idobat, $idpelanggan)
+    {
+        $keranjangitem = new Keranjang();
+
+        $keranjangitem->obat_id = $idobat;
+        $keranjangitem->pelanggan_id = $idpelanggan;
+        $keranjangitem->jumlah = $request->jumlah;
+        $keranjangitem->save();
+
+        $obat = Obat::find($idobat);
+        $user = pelanggan::find($idpelanggan);
+
+        Session::flash('sukses', 'Sukses Menambahkan Obat ke Keranjang');
+        return view('pelanggan.detailobat', compact('obat', 'user'));
+    }
+
+    public function keranjang($idpelanggan)
+    {
+        $item = DB::table('keranjangs')->where(['pelanggan_id' => $idpelanggan])->get();
+        
+        return view('pelanggan.keranjang', compact('item'));
     }
 }

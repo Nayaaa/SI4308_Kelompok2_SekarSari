@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Obat;
+use App\Models\pelanggan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,11 +21,11 @@ class ObatController extends Controller
         return view('admin.daftarobat', compact('obat'));
     }
 
-    public function detail($id)
+    public function detail($id, $idpelanggan)
     {
         $obat = Obat::find($id);
-
-        return view('pelanggan.detailobat', compact('obat'));
+        $user = pelanggan::find($idpelanggan);
+        return view('pelanggan.detailobat', compact('obat', 'user'));
     }
 
     public function katalog()

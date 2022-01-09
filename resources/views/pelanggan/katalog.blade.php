@@ -41,8 +41,8 @@
         @foreach($obat as $obt=> $ob)
           <div class="col-sm-6 col-lg-4 text-center item mb-4 item-v2">
             <span class="onsale">Sale</span>
-            <a href="{{route('detail', ['id' => $ob->id])}}"> <img src="{{ asset('template/images/'.$ob->Foto) }}" alt="Image"></a>
-            <h3 class="text-dark"><a href="{{route('detail', ['id' => $ob->id])}}">{{$ob->NamaObat}}</a></h3>
+            <a href="{{route('detail', ['id' => $ob->id ,'idpelanggan' => $u->id])}}"> <img src="{{ asset('template/images/'.$ob->Foto) }}" alt="Image"></a>
+            <h3 class="text-dark"><a href="{{route('detail', ['id' => $ob->id ,'idpelanggan' => $u->id])}}">{{$ob->NamaObat}}</a></h3>
             <p class="price">{{$ob->Harga}}</p>
           </div>    
           @endforeach 

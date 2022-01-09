@@ -54,6 +54,8 @@ Route::get('/home', [ObatController::class, 'index'])->name('obat');
 
 Route::get('/pelanggan/layanan', [DokterController::class, 'layanan'])->name('layanan');
 
+Route::get('/pelanggan/keranjang/{idpelanggan}', [pelangganController::class, 'keranjang'])->name('keranjangpelanggan');
+
 Route::get('/katalog', [ObatController::class, 'katalog'])->name('katalog');
 
 Route::post('/login/admin', [KaryawanController::class, 'auth'])->name('loginadmin');
@@ -78,7 +80,9 @@ Route::get('/katalogobatpencernaan', [ObatController::class, 'katalogobatpencern
 
 Route::get('/katalogobatvitamindansuplemen', [ObatController::class, 'katalogobatvitamindansuplemen'])->name('katalogobatvitamindansuplemen');
 
-Route::get('/detailobat/{id}', [ObatController::class, 'detail'])->name('detail');
+Route::get('/detailobat/{id}/{idpelanggan}', [ObatController::class, 'detail'])->name('detail');
+
+Route::post('/tambahkeranjang/{idobat}/{idpelanggan}', [pelangganController::class, 'tambahkeranjang'])->name('tambahkeranjang');
 
 Route::post('/admin/simpanobat', [ObatController::class, 'tambahobat'])->name('simpanobat');
 
