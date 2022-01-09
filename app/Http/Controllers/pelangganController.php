@@ -65,4 +65,12 @@ class pelangganController extends Controller
         
         return view('pelanggan.keranjang', compact('item'));
     }
+    public function deleteitem(Request $request, $idpelanggan)
+    {
+        $obat = DB::table('keranjangs')->where(['pelanggan_id' => $idpelanggan, 'obat_id' => $request->id]);
+
+        $obat->delete();
+
+        return redirect(route('keranjangpelanggan',[$idpelanggan]));
+    }
 }

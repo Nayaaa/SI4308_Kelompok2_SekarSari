@@ -78,13 +78,6 @@
                 </div>
             </div>
         </div>
-        <div class="bg-light py-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 mb-0"><strong class="text-black">Daftar Obat</strong><span class="mx-2 mb-0">/ . . .</span></div>
-                </div>
-            </div>
-        </div>
         <div class="site-section">
             <div class="container">
 
@@ -104,19 +97,30 @@
                             <tbody>
                                 @foreach($item as $ite=> $i)
                                 @php
-                                $ob = DB::table('obats')->where(['id' => $i->obat_id])->get();
+                                $foto = DB::table('obats')->where(['id' => $i->obat_id])->value('Foto');
+                                $nama = DB::table('obats')->where(['id' => $i->obat_id])->value('NamaObat');
+                                $harga = DB::table('obats')->where(['id' => $i->obat_id])->value('Harga');
+                                $kms = DB::table('obats')->where(['id' => $i->obat_id])->value('Kemasan');
                                 @endphp
                                 <tr>
                                     <td class="product-thumbnail">
-                                        <img src="{{ asset('template/images/'.$ob->Foto) }}" alt="Image" class="img-fluid">
+                                        <img src="{{ asset('template/images/'.$foto) }}" alt="Image" class="img-fluid">
                                     </td>
                                     <td class="product-name">
-                                        <h2 class="h5 text-black">{{$ob->NamaObat}}</h2>
+                                        <h2 class="h5 text-black">{{$nama}}</h2>
                                     </td>
-                                    <td>{{$ob->Harga}}</td>
+                                    <td>{{$harga}}</td>
                                     <td>{{$i->jumlah}}</td>
-                                    <td>{{$ob->Kemasan}}</td>
-                                    <td>                                    </td>
+                                    <td>{{$kms}}</td>
+                                    <td>
+                                        <form action="{{route('deleteitem', ['idpelanggan' => $i->pelanggan_id])}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" value="{{$i->obat_id}}" name="id">
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
