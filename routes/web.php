@@ -90,6 +90,8 @@ Route::post('/admin/simpankaryawan', [KaryawanController::class, 'tambahkaryawan
 
 Route::post('/admin/deleteobat', [ObatController::class, 'deleteobat'])->name('deleteobat');
 
+Route::post('/pelanggan/deleteitem/{idpelanggan}', [pelangganController::class, 'deleteitem'])->name('deleteitem');
+
 Route::get('/admin/editobat/{id}', [ObatController::class, 'editobat'])->name('editobat');
 
 Route::post('/admin/deletedokter', [DokterController::class, 'deletedokter'])->name('deletedokter');
