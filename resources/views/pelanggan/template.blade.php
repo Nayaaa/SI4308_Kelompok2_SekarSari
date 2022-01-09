@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="template/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="{{ asset('template/fonts/icomoon/style.css')}}">
 
   <link rel="stylesheet" href="{{ asset('template/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('template/fonts/flaticon/font/flaticon.css') }}">
@@ -70,9 +70,8 @@
           </div>
           <div class="icons">
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="#" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
+            <a href="{{url ('/')}}" class="icons-btn d-inline-block bag">
+              <span class="icon-sign-out"></span>
             </a>
             <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
                 class="icon-menu"></span></a>
@@ -99,8 +98,7 @@
             <ul class="list-unstyled">
               <li><a href="{{url('/home')}}">Home</a></li>
               <li><a href="{{url('/katalog')}}">Obat</a></li>
-              <li><a href="#">Layanan Kesehatan</a></li>
-              <li><a href="#">Tentang</a></li>
+              <li><a href="{{url('/pelanggan/layanan')}}">Layanan Kesehatan</a></li>
             </ul>
           </div>
 

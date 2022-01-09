@@ -51,14 +51,14 @@
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li class="active"><a href="{{url ('/admin')}}">Obat</a></li>
                 <li><a href="{{url ('/admin/dokter')}}">Layanan Kesehatan</a></li>
+                <li><a href="{{url ('/admin/karyawan')}}">Karyawan</a></li>
               </ul>
             </nav>
           </div>
           <div class="icons">
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="#" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
+            <a href="{{url ('/loginadmin')}}" class="icons-btn d-inline-block bag">
+              <span class="icon-sign-out"></span>
             </a>
             <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
                 class="icon-menu"></span></a>
@@ -85,6 +85,7 @@
             <ul class="list-unstyled">
               <li><a href="{{url ('/admin')}}">Obat</a></li>
               <li><a href="{{url ('/admin/dokter')}}">Layanan Kesehatan</a></li>
+              <li><a href="{{url ('/admin/karyawan')}}">Karyawan</a></li>
             </ul>
           </div>
 
@@ -118,15 +119,15 @@
     </footer>
   </div>
 
-  <script src="template/js/jquery-3.3.1.min.js"></script>
-  <script src="template/js/jquery-ui.js"></script>
-  <script src="template/js/popper.min.js"></script>
-  <script src="template/js/bootstrap.min.js"></script>
-  <script src="template/js/owl.carousel.min.js"></script>
-  <script src="template/js/jquery.magnific-popup.min.js"></script>
-  <script src="template/js/aos.js"></script>
+  <script src="{{ asset('template/js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{ asset('template/js/jquery-ui.js')}}"></script>
+  <script src="{{ asset('template/js/popper.min.js')}}"></script>
+  <script src="{{ asset('template/js/bootstrap.min.js')}}"></script>
+  <script src="{{ asset('template/js/owl.carousel.min.js')}}"></script>
+  <script src="{{ asset('template/js/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{ asset('template/js/aos.js')}}"></script>
 
-  <script src="template/js/main.js"></script>
+  <script src="{{ asset('template/js/main.js')}}"></script>
 
 </body>
 

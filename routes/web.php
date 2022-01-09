@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\pelangganController;
+use App\Models\Karyawan;
 use App\Models\Obat;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,10 @@ Route::get('/', function () {
     return view('pelanggan.login');
 });
 
+Route::get('/loginadmin', function () {
+    return view('admin.login');
+});
+
 Route::get('/daftar', function () {
     return view('pelanggan.daftar');
 });
@@ -33,16 +39,26 @@ Route::get('/admin/tambahdokter', function () {
     return view('admin.tambahdokter');
 });
 
+Route::get('/admin/tambahkaryawan', function () {
+    return view('admin.tambahkaryawan');
+});
+
 
 Route::get('/admin', [ObatController::class, 'admin'])->name('daftarobat');
 
 Route::get('/admin/dokter', [DokterController::class, 'index'])->name('dokter');
+
+Route::get('/admin/karyawan', [KaryawanController::class, 'index'])->name('karyawan');
 
 Route::get('/home', [ObatController::class, 'index'])->name('obat');
 
 Route::get('/pelanggan/layanan', [DokterController::class, 'layanan'])->name('layanan');
 
 Route::get('/katalog', [ObatController::class, 'katalog'])->name('katalog');
+
+Route::post('/login/admin', [KaryawanController::class, 'auth'])->name('loginadmin');
+
+Route::post('/login/pelanggan', [pelangganController::class, 'auth'])->name('loginpelanggan');
 
 Route::get('/katalogobatmata', [ObatController::class, 'katalogmata'])->name('katalogmata');
 
@@ -66,6 +82,8 @@ Route::get('/detailobat/{id}', [ObatController::class, 'detail'])->name('detail'
 
 Route::post('/admin/simpanobat', [ObatController::class, 'tambahobat'])->name('simpanobat');
 
+Route::post('/admin/simpankaryawan', [KaryawanController::class, 'tambahkaryawan'])->name('simpankaryawan');
+
 Route::post('/admin/deleteobat', [ObatController::class, 'deleteobat'])->name('deleteobat');
 
 Route::get('/admin/editobat/{id}', [ObatController::class, 'editobat'])->name('editobat');
@@ -81,5 +99,11 @@ Route::post('/admin/editobat/{id}', [ObatController::class, 'updateobat'])->name
 Route::post('/admin/simpandokter', [DokterController::class, 'tambahdokter'])->name('simpandokter');
 
 Route::post('/daftarpelanggan', [pelangganController::class, 'daftar'])->name('daftarpelanggan');
+
+Route::post('/admin/deletekaryawan', [KaryawanController::class, 'deletekaryawan'])->name('deletekaryawan');
+
+Route::get('/admin/editkaryawan/{id}', [KaryawanController::class, 'editkaryawan'])->name('editkaryawan');
+
+Route::post('/admin/editkaryawan/{id}', [KaryawanController::class, 'updatekaryawan'])->name('updatekaryawan');
 
 

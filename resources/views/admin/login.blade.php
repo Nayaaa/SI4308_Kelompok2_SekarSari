@@ -34,14 +34,16 @@
               <div class="mb-4">
               <h3>Sign In to <strong>SekarSari</strong></h3>
               <br>
-              <p class="mb-4">Sign In untuk masuk ke Apotek Sekar Sari Online</p>
+              <p class="mb-4">Sign In untuk Karyawan Apotek Sekar Sari</p>
                 @if(session('error'))
-                  <div class="alert alert-danger">
-                      </b> {{session('error')}}
-                  </div>
-                  @endif
+                <br>
+                <div class="alert alert-danger">
+                    <b>Opps!</b> {{session('error')}}
+                </div>
+                <br>
+                @endif
             </div>
-            <form action="{{route('loginpelanggan')}}" method="post">
+            <form action="{{route('loginadmin')}}" method="post">
               @csrf
               <div class="form-group first">
                 <label for="email">Email</label>
@@ -55,8 +57,6 @@
               <br>
               <input type="submit" value="Log In" class="btn text-white btn-block btn-primary">
             </form>
-            <br>
-            <p class="mb-4">Belum memiliki akun ? <a href="{{url('/daftar')}}">daftar disini</a></p>
             </div>
           </div>
           
