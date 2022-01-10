@@ -28,6 +28,12 @@ class ObatController extends Controller
         return view('pelanggan.detailobat', compact('obat', 'user'));
     }
 
+    public function detail2($id)
+    {
+        $obat = Obat::find($id);
+        return view('pelanggan.detailobat', compact('obat'));
+    }
+
     public function katalog()
     {
         $obat = Obat::all();

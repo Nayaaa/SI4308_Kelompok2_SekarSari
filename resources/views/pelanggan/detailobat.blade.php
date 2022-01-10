@@ -66,7 +66,6 @@
             </nav>
           </div>
           <div class="icons">
-            <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
             <a href="{{url ('/')}}" class="icons-btn d-inline-block bag">
               <span class="icon-sign-out"></span>
             </a>

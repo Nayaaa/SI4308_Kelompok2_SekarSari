@@ -30,14 +30,6 @@
 
     <div class="site-navbar py-2">
 
-      <div class="search-wrap">
-        <div class="container">
-          <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-          <form action="#" method="post">
-            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
-          </form>
-        </div>
-      </div>
 
       <div class="container">
         <div class="d-flex align-items-center justify-content-between">
@@ -54,34 +46,34 @@
                 <li class="has-children">
                   <a href="#">Kategori</a>
                   <ul class="dropdown">
-                        <li><a href="{{url('/katalogobatkulitluar')}}">Obat Kulit Luar</a></li>
-                        <li><a href="{{url('/katalogobatperedanyeri')}}">Pereda Nyeri</a></li>
-                        <li><a href="{{url('/katalogobatantiseptik')}}">Antiseptik</a></li>
-                        <li><a href="{{url('/katalogobatantiinflamasi')}}">Anti Inflamasi</a></li>
-                        <li><a href="{{url('/katalogobatmata')}}">Mata</a></li>
-                        <li><a href="{{url('/katalogobatalergi')}}">Alergi</a></li>
-                        <li><a href="{{url('/katalogobatmulutdantenggorokan')}}">Mulut & Tenggorokan</a></li>
-                        <li><a href="{{url('/katalogobatpencernaan')}}">Pencernaan</a></li>
-                        <li><a href="{{url('/katalogobatvitamindansuplemen')}}">Vitamin dan Suplemen</a></li>
+                    <li><a href="{{url('/katalogobatkulitluar')}}">Obat Kulit Luar</a></li>
+                    <li><a href="{{url('/katalogobatperedanyeri')}}">Pereda Nyeri</a></li>
+                    <li><a href="{{url('/katalogobatantiseptik')}}">Antiseptik</a></li>
+                    <li><a href="{{url('/katalogobatantiinflamasi')}}">Anti Inflamasi</a></li>
+                    <li><a href="{{url('/katalogobatmata')}}">Mata</a></li>
+                    <li><a href="{{url('/katalogobatalergi')}}">Alergi</a></li>
+                    <li><a href="{{url('/katalogobatmulutdantenggorokan')}}">Mulut & Tenggorokan</a></li>
+                    <li><a href="{{url('/katalogobatpencernaan')}}">Pencernaan</a></li>
+                    <li><a href="{{url('/katalogobatvitamindansuplemen')}}">Vitamin dan Suplemen</a></li>
                   </ul>
                 <li><a href="{{url('/pelanggan/layanan')}}">Layanan Kesehatan</a></li>
+                <li><a href="#">Keranjang</a></li>
+                <li><a href="#">Riwayat Transaksi</a></li>
               </ul>
             </nav>
           </div>
           <div class="icons">
-            <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
             <a href="{{url ('/')}}" class="icons-btn d-inline-block bag">
               <span class="icon-sign-out"></span>
             </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
-                class="icon-menu"></span></a>
+            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
           </div>
         </div>
       </div>
     </div>
-  
+
     @yield('isi')
-    
+
     <footer class="site-footer bg-light">
       <div class="container">
         <div class="row">
@@ -120,9 +112,10 @@
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> Made
-              with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="#" target="_blank"
-                class="text-primary">Apotek Sekar Sari</a>
+              <script>
+                document.write(new Date().getFullYear());
+              </script> Made
+              with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="#" target="_blank" class="text-primary">Apotek Sekar Sari</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
