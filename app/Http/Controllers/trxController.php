@@ -36,8 +36,8 @@ class trxController extends Controller
 
     public function transaksi($id)
     {
-        $item = transaksi::all();
-        $pesan = pesananlayanan::all();
+        $item = DB::table('transaksis')->where(['pelanggan_id'=> $id])->get();
+        $pesan = DB::table('pesananlayanans')->where(['pelanggan_id'=> $id])->get();
         return view('pelanggan.trx', compact('item','pesan'));
     }
 

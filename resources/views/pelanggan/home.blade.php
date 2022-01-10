@@ -62,6 +62,7 @@
                   </ul>
                 <li><a href="{{url('/pelanggan/layanan')}}">Layanan Kesehatan</a></li>
                 <li><a href="{{route('keranjangpelanggan', ['idpelanggan' => $id])}}">Keranjang</a></li>
+                <li><a href="#">Riwayat Transaksi</a></li>
               </ul>
             </nav>
           </div>
