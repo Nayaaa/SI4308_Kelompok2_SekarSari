@@ -123,4 +123,12 @@ Route::post('/admin/editkaryawan/{id}', [KaryawanController::class, 'updatekarya
 
 Route::post('/pelanggan/checkout', [trxController::class, 'checkout'])->name('checkout');
 
+Route::get('/admin/daftarpesanan', [trxController::class, 'daftarpesanan'])->name('daftarpesanan');
+
+Route::get('/admin/daftarbooklayanan', [trxController::class, 'daftarbooklayanan'])->name('daftarbooklayanan');
+
+Route::get('/admin/update/{id}', [trxController::class, 'update'])->name('update');
+
+Route::post('/admin/update/{id}', [trxController::class, 'updatestatus'])->name('updatestatus');
+
 

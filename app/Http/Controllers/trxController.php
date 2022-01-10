@@ -40,4 +40,34 @@ class trxController extends Controller
         $pesan = pesananlayanan::all();
         return view('pelanggan.trx', compact('item','pesan'));
     }
+
+    public function daftarpesanan()
+    {
+        $item = transaksi::all();
+        return view('admin.daftarpesanan', compact('item'));
+    }
+
+    public function update($id)
+    {
+        $item = transaksi::find($id);
+
+        return view('admin.updatestatus', compact('item'));
+    }
+
+    public function updatestatus(Request $request, $id)
+    {
+        $item = transaksi::find($id);
+
+        $item->status = $request->status;
+        $item->resi = $request->resi;
+        $item->save();   
+
+        return redirect()->route('daftarpesanan');
+    }
+
+    public function daftarbooklayanan()
+    {
+        $item = pesananlayanan::all();
+        return view('admin.daftarbooklayanan', compact('item'));
+    }
 }
