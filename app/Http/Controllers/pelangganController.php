@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
 use App\Models\Keranjang;
 use App\Models\Obat;
 use App\Models\pelanggan;
+use App\Models\pesananlayanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -35,7 +37,8 @@ class pelangganController extends Controller
         if ($user->isNotEmpty()) {
             $login = true;
             $obat = Obat::all();
-            return view('pelanggan.home', compact('obat', 'user'));
+            $id = DB::table('pelanggans')->where(['email' => $email, 'password' => $pwd])->value('id');
+            return view('pelanggan.home', compact('obat','user' ,'id'));
         }else{
             $login = false;
             Session::flash('error', 'Email atau Password Salah');
@@ -62,8 +65,9 @@ class pelangganController extends Controller
     public function keranjang($idpelanggan)
     {
         $item = DB::table('keranjangs')->where(['pelanggan_id' => $idpelanggan])->get();
+        $id = $idpelanggan;
         
-        return view('pelanggan.keranjang', compact('item'));
+        return view('pelanggan.keranjang', compact('item', 'id'));
     }
     public function deleteitem(Request $request, $idpelanggan)
     {
@@ -72,5 +76,27 @@ class pelangganController extends Controller
         $obat->delete();
 
         return redirect(route('keranjangpelanggan',[$idpelanggan]));
+    }
+
+    public function pesanlayanan($id)
+    {
+        $dokter = Dokter::all();
+        $idpelanggan = $id;
+        return view('pelanggan.layanan', compact('dokter', 'idpelanggan'));
+    }
+
+    public function pesan(Request $request)
+    {
+        $pesanan = new pesananlayanan();
+
+        $dokter = DB::table('dokters')->where(['nama' => $request->dokter])->value('id');
+
+        $pesanan->pelanggan_id = $request->id;
+        $pesanan->dokter_id = $dokter;
+        $pesanan->waktuperiksa = $request->waktu;
+        $pesanan->save();        
+        Session::flash('sukses', 'Sukses Memesan Layanan Kesehatan');
+        return redirect(route('pesanlayanan',[$request->id]));
+
     }
 }

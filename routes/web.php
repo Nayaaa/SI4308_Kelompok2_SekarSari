@@ -4,6 +4,7 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\pelangganController;
+use App\Http\Controllers\trxController;
 use App\Models\Karyawan;
 use App\Models\Obat;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,10 @@ Route::get('/home', [ObatController::class, 'index'])->name('obat');
 
 Route::get('/pelanggan/layanan', [DokterController::class, 'layanan'])->name('layanan');
 
+Route::get('/pesanlayanan/{id}', [pelangganController::class, 'pesanlayanan'])->name('pesanlayanan');
+
+Route::post('/pesan', [pelangganController::class, 'pesan'])->name('pesan');
+
 Route::get('/pelanggan/keranjang/{idpelanggan}', [pelangganController::class, 'keranjang'])->name('keranjangpelanggan');
 
 Route::get('/katalog', [ObatController::class, 'katalog'])->name('katalog');
@@ -82,6 +87,8 @@ Route::get('/katalogobatvitamindansuplemen', [ObatController::class, 'katalogoba
 
 Route::get('/detailobat/{id}/{idpelanggan}', [ObatController::class, 'detail'])->name('detail');
 
+Route::get('/detailobat/{id}', [ObatController::class, 'detail2'])->name('detail2');
+
 Route::post('/tambahkeranjang/{idobat}/{idpelanggan}', [pelangganController::class, 'tambahkeranjang'])->name('tambahkeranjang');
 
 Route::post('/admin/simpanobat', [ObatController::class, 'tambahobat'])->name('simpanobat');
@@ -93,6 +100,8 @@ Route::post('/admin/deleteobat', [ObatController::class, 'deleteobat'])->name('d
 Route::post('/pelanggan/deleteitem/{idpelanggan}', [pelangganController::class, 'deleteitem'])->name('deleteitem');
 
 Route::get('/admin/editobat/{id}', [ObatController::class, 'editobat'])->name('editobat');
+
+Route::get('/pelanggan/transaksi/{id}', [trxController::class, 'transaksi'])->name('transaksi');
 
 Route::post('/admin/deletedokter', [DokterController::class, 'deletedokter'])->name('deletedokter');
 
@@ -111,5 +120,7 @@ Route::post('/admin/deletekaryawan', [KaryawanController::class, 'deletekaryawan
 Route::get('/admin/editkaryawan/{id}', [KaryawanController::class, 'editkaryawan'])->name('editkaryawan');
 
 Route::post('/admin/editkaryawan/{id}', [KaryawanController::class, 'updatekaryawan'])->name('updatekaryawan');
+
+Route::post('/pelanggan/checkout', [trxController::class, 'checkout'])->name('checkout');
 
 

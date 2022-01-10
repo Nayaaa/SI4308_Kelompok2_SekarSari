@@ -24,12 +24,8 @@
 </head>
 
 <body>
-
   <div class="site-wrap">
-
-
     <div class="site-navbar py-2">
-
       <div class="search-wrap">
         <div class="container">
           <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
@@ -54,32 +50,31 @@
                 <li class="has-children">
                   <a href="#">Kategori</a>
                   <ul class="dropdown">
-                        <li><a href="{{url('/katalogobatkulitluar')}}">Obat Kulit Luar</a></li>
-                        <li><a href="{{url('/katalogobatperedanyeri')}}">Pereda Nyeri</a></li>
-                        <li><a href="{{url('/katalogobatantiseptik')}}">Antiseptik</a></li>
-                        <li><a href="{{url('/katalogobatantiinflamasi')}}">Anti Inflamasi</a></li>
-                        <li><a href="{{url('/katalogobatmata')}}">Mata</a></li>
-                        <li><a href="{{url('/katalogobatalergi')}}">Alergi</a></li>
-                        <li><a href="{{url('/katalogobatmulutdantenggorokan')}}">Mulut & Tenggorokan</a></li>
-                        <li><a href="{{url('/katalogobatpencernaan')}}">Pencernaan</a></li>
-                        <li><a href="{{url('/katalogobatvitamindansuplemen')}}">Vitamin dan Suplemen</a></li>
+                    <li><a href="{{url('/katalogobatkulitluar')}}">Obat Kulit Luar</a></li>
+                    <li><a href="{{url('/katalogobatperedanyeri')}}">Pereda Nyeri</a></li>
+                    <li><a href="{{url('/katalogobatantiseptik')}}">Antiseptik</a></li>
+                    <li><a href="{{url('/katalogobatantiinflamasi')}}">Anti Inflamasi</a></li>
+                    <li><a href="{{url('/katalogobatmata')}}">Mata</a></li>
+                    <li><a href="{{url('/katalogobatalergi')}}">Alergi</a></li>
+                    <li><a href="{{url('/katalogobatmulutdantenggorokan')}}">Mulut & Tenggorokan</a></li>
+                    <li><a href="{{url('/katalogobatpencernaan')}}">Pencernaan</a></li>
+                    <li><a href="{{url('/katalogobatvitamindansuplemen')}}">Vitamin dan Suplemen</a></li>
                   </ul>
                 <li><a href="{{url('/pelanggan/layanan')}}">Layanan Kesehatan</a></li>
+                <li><a href="{{route('keranjangpelanggan', ['idpelanggan' => $id])}}">Keranjang</a></li>
               </ul>
             </nav>
           </div>
           <div class="icons">
-            <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
             <a href="{{url ('/')}}" class="icons-btn d-inline-block bag">
               <span class="icon-sign-out"></span>
             </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
-                class="icon-menu"></span></a>
+            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
           </div>
         </div>
       </div>
     </div>
-<div class="owl-carousel owl-single px-0">
+    <div class="owl-carousel owl-single px-0">
       <div class="site-blocks-cover overlay" style="background-image: url('/template/images/hero_bg.jpg');">
         <div class="container">
           <div class="row">
@@ -92,7 +87,7 @@
                     <p>Apotek Sekar Sari buka dari jam 8 Pagi hingga jam 9 Malam dan siap memberikan Pelayanan Terbaik Untuk Anda</p>
                   </div>
                 </div>
-                
+
                 <p><a href="{{url('/katalog')}}" class="btn btn-primary px-5 py-3">Shop Now</a></p>
               </div>
             </div>
@@ -118,7 +113,7 @@
         </div>
       </div>
 
-</div>
+    </div>
 
 
 
@@ -152,8 +147,8 @@
         </div>
       </div>
     </div>
-    
-    
+
+
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -165,7 +160,7 @@
           <div class="col-md-12 block-3 products-wrap">
             <div class="nonloop-block-3 owl-carousel">
 
-            @foreach($obat as $obt=> $ob)
+              @foreach($obat as $obt=> $ob)
               @foreach($user as $us=> $u)
 
               <div class="text-center item mb-4 item-v2">
@@ -176,7 +171,7 @@
                 <p class="price">{{$ob->Harga}}</p>
               </div>
               @endforeach
-            @endforeach
+              @endforeach
 
             </div>
           </div>
@@ -186,53 +181,53 @@
 
     <div class="site-section">
       <div class="container">
-        
+
         <div class="row justify-content-between">
           <div class="col-lg-6">
             <div class="title-section">
               <h2>Kata <strong class="text-primary">Pelanggan</strong></h2>
             </div>
             <div class="block-3 products-wrap">
-            <div class="owl-single no-direction owl-carousel">
-        
-              <div class="testimony">
-                <blockquote>
-                  <img src="{{ asset('template/images/person_1.jpg')}}" alt="Image" class="img-fluid">
-                  <p>&ldquo;Berbelanja obat di apotek Sekar Sari sangat memuaskan. Pelayanan ramah dan produk terjamin.&rdquo;</p>
-                </blockquote>
+              <div class="owl-single no-direction owl-carousel">
 
-                <p class="author">&mdash; Sumirah</p>
+                <div class="testimony">
+                  <blockquote>
+                    <img src="{{ asset('template/images/person_1.jpg')}}" alt="Image" class="img-fluid">
+                    <p>&ldquo;Berbelanja obat di apotek Sekar Sari sangat memuaskan. Pelayanan ramah dan produk terjamin.&rdquo;</p>
+                  </blockquote>
+
+                  <p class="author">&mdash; Sumirah</p>
+                </div>
+
+                <div class="testimony">
+                  <blockquote>
+                    <img src="{{ asset('template/images/person_2.jpg')}}" alt="Image" class="img-fluid">
+                    <p>&ldquo;Tidak perlu diragukan lagi pelayanan apotek Sekar Sari. Apotek andalan keluarga turun-temurun nih !!&rdquo;</p>
+                  </blockquote>
+
+                  <p class="author">&mdash; Suwanto</p>
+                </div>
+
+                <div class="testimony">
+                  <blockquote>
+                    <img src="{{ asset('template/images/person_3.jpg')}}" alt="Image" class="img-fluid">
+                    <p>&ldquo;Bisa book konsultasi dokter online terus bisa reschedule jugaa, paling top emang layanan apotek Sekar Sari. Joss !!!.&rdquo;</p>
+                  </blockquote>
+
+                  <p class="author">&mdash; Roni Juanto</p>
+                </div>
+
+                <div class="testimony">
+                  <blockquote>
+                    <img src="{{ asset('template/images/person_4.jpg')}}" alt="Image" class="img-fluid">
+                    <p>&ldquo;Belanja obat disini memuaskan. Bakal dikasi rekomendasi dan kita bisa nanya-nanya dulu ke mbak-mbaknya loo ... .&rdquo;</p>
+                  </blockquote>
+
+                  <p class="author">&mdash; Andre Sujito</p>
+                </div>
+
               </div>
-        
-              <div class="testimony">
-                <blockquote>
-                  <img src="{{ asset('template/images/person_2.jpg')}}" alt="Image" class="img-fluid">
-                  <p>&ldquo;Tidak perlu diragukan lagi pelayanan apotek Sekar Sari. Apotek andalan keluarga turun-temurun nih !!&rdquo;</p>
-                </blockquote>
-              
-                <p class="author">&mdash; Suwanto</p>
-              </div>
-        
-              <div class="testimony">
-                <blockquote>
-                  <img src="{{ asset('template/images/person_3.jpg')}}" alt="Image" class="img-fluid">
-                  <p>&ldquo;Bisa book konsultasi dokter online terus bisa reschedule jugaa, paling top emang layanan apotek Sekar Sari. Joss !!!.&rdquo;</p>
-                </blockquote>
-              
-                <p class="author">&mdash; Roni Juanto</p>
-              </div>
-        
-              <div class="testimony">
-                <blockquote>
-                  <img src="{{ asset('template/images/person_4.jpg')}}" alt="Image" class="img-fluid">
-                  <p>&ldquo;Belanja obat disini memuaskan. Bakal dikasi rekomendasi dan kita bisa nanya-nanya dulu ke mbak-mbaknya loo ... .&rdquo;</p>
-                </blockquote>
-              
-                <p class="author">&mdash; Andre Sujito</p>
-              </div>
-        
             </div>
-          </div>
           </div>
           <div class="col-lg-5">
             <div class="title-section">
@@ -294,9 +289,10 @@
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> Made
-              with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="#" target="_blank"
-                class="text-primary">Apotek Sekar Sari</a>
+              <script>
+                document.write(new Date().getFullYear());
+              </script> Made
+              with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="#" target="_blank" class="text-primary">Apotek Sekar Sari</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
